@@ -1,7 +1,7 @@
 import java.util.GregorianCalendar;
 
 
-public class Course /*extends Séance */{
+public class Course extends Séance {
 	private GregorianCalendar date; 
 	int duree;
 	int distance;
