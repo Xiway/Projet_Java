@@ -1,10 +1,10 @@
 import java.util.GregorianCalendar;
 
 
-public class Natation extends Séance {
+public class Natation extends SÃ©ance {
 	private GregorianCalendar date; 
 	int duree;
-	private String Type = "Natation";
+	private String Type = "";
 	private int distance;
 	String _n = System.getProperty("line.separator");
 	
@@ -17,35 +17,38 @@ public class Natation extends Séance {
 		this.distance = distance;
 	}
 	
-	@Override
-	void affiche() {
-		// TODO Auto-generated method stub
-		System.out.println(_n+  "Séance du " + this.date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + this.date.get(GregorianCalendar.MONTH) + "/"+ this.date.get(GregorianCalendar.YEAR) +" de Natation :" + _n );
-		System.out.println("Duree totale : "+ this.duree + " minutes" +_n + "Vous avez parcouru : "+ this.distance + " m en nage." + _n);
+
+	public GregorianCalendar getDate() {
+		return date;
 	}
-	
-	@Override
-	int getDuree() {
-		// TODO Auto-generated method stub
-		return this.duree;
+	public void setDate(GregorianCalendar date) {
+		this.date = date;
 	}
-	
-	@Override
-	int getDistance() {
-		// TODO Auto-generated method stub
-		return this.distance;
+
+	public int getDuree() {
+		return duree;
 	}
-	
-	@Override
-	String getType() {
-		// TODO Auto-generated method stub
-		return this.Type;
+	public void setDuree(int duree) {
+		this.duree = duree;
 	}
-	
-	@Override
-	GregorianCalendar getDate() {
-		// TODO Auto-generated method stub
-		return this.date;
+	public int getDistance() {
+		return distance;
+	}
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+	public String getType() {
+		return  Type;
+	}
+	public void setType(String type) {
+		Type = type;
+	}
+
+	public void affiche(){
+		// Je te laisse t'occuper de l'affichage de la date System.out.println("SÃ©ance du " + this.date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + this.date.get(GregorianCalendar.MONTH) + "/"+ this.date.get(GregorianCalendar.YEAR) +" de type natation :");
+		System.out.println("Distance totale parcourue : "+this.distance+" m.");
+		System.out.println("Duree : "+this.duree + " minutes.");
+		System.out.println("Type de nage : "+this.Type+".");
 	}
 	
 	
