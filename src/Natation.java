@@ -1,12 +1,12 @@
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-
 public class Natation extends Séance {
-		private GregorianCalendar date; 
+		public GregorianCalendar date; 
 		int duree;
-		private String Type = "";
-		private int distance;
+		public int distance;
 		String _n = System.getProperty("line.separator");
+		public ArrayList<Fraction> fractions;
 		
 		public Natation(int jour, int mois, int annee, int heure, int minute){
 			date = new GregorianCalendar(annee, mois, jour, heure, minute, 0 );
@@ -16,8 +16,14 @@ public class Natation extends Séance {
 			this.duree = duree;
 			this.distance = distance;
 		}
+		Natation(){
+			fractions = new ArrayList<Fraction>();
+		}
 		
-
+		void add(Fraction s){
+			this.fractions.add(s);
+		}
+		
 		public GregorianCalendar getDate() {
 			return date;
 		}
@@ -28,28 +34,15 @@ public class Natation extends Séance {
 		public int getDuree() {
 			return duree;
 		}
-		public void setDuree(int duree) {
-			this.duree = duree;
-		}
 		public int getDistance() {
 			return distance;
 		}
-		public void setDistance(int distance) {
-			this.distance = distance;
-		}
-		public String getType() {
-			return  Type;
-		}
-		public void setType(String type) {
-			Type = type;
-		}
-
 		public void affiche(){
-			// Je te laisse t'occuper de l'affichage de la date System.out.println("SÃ©ance du " + this.date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + this.date.get(GregorianCalendar.MONTH) + "/"+ this.date.get(GregorianCalendar.YEAR) +" de type natation :");
+			System.out.println("Séance du " + this.date.get(GregorianCalendar.DAY_OF_MONTH) + "/" + this.date.get(GregorianCalendar.MONTH) + "/"+ this.date.get(GregorianCalendar.YEAR) +" de type natation :");
 			System.out.println("Distance totale parcourue : "+this.distance+" m.");
 			System.out.println("Duree : "+this.duree + " minutes.");
-			System.out.println("Type de nage : "+this.Type+".");
 		}
+		
 		
 		
 	}
